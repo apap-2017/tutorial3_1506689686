@@ -43,12 +43,12 @@ public class StudentController {
 			StudentModel student = studentService.selectStudent(npm.get());
 			model.addAttribute("student", student);
 			if(student == null) {
-				return "error_page";
+				return "error_notFound";
 			}
 			return "view";
 		}
 		
-		return "error_notFound";
+		return "error_page";
 	}
 	
 	@RequestMapping(value = {"/student/delete", "/student/delete/{npm}"})
